@@ -1,0 +1,6 @@
+{
+    "name": "threading",
+    "targetType": "executable",
+    "dflags": ["-betterC"],
+    "lflags": ["-lpthread"]
+}
