@@ -5,23 +5,9 @@ A comprehensive comparison of threading implementations in the D programming lan
 
 ## Abstract
 
-This project explores how concurrency can be supported in the D programming lan-
-guage’s betterC mode, which excludes the D runtime to minimize binary size and maxi-
-mize portability. The central research question asks: How can threading and synchroniza-
-tion be implemented in betterC while maintaining performance and compatibility across
-platforms? To address this, I designed and implemented a lightweight high performance
-threading library that replicates D’s core threading functionality using system-level APIs,
-providing abstractions for thread creation, joining, and synchronization primitives such
-as mutexes and condition variables.
+This project explores how concurrency can be supported in the D programming language’s betterC mode, which excludes the D runtime to minimize binary size and maximize portability. The central research question asks: How can threading and synchronization be implemented in betterC while maintaining performance and compatibility across platforms? To address this, I designed and implemented a lightweight high performance threading library that replicates D’s core threading functionality using system-level APIs, providing abstractions for thread creation, joining, and synchronization primitives such as mutexes and condition variables.
 
-Comparative testing and performance evaluation across multiple benchmarks, includ-
-ing basic threading, multiple producer-multiple consumer (MPMC) patterns, and synchro-
-nization primitives, were conducted to evaluate the trade-offs of removing D runtime de-
-pendencies. The results demonstrate that the betterC implementation achieves compara-
-ble runtime performance to D’s native threading while producing binaries that are 30–40x
-smaller. This lightweight threading library extends D’s applicability to performance-
-critical and resource-constrained environments while preserving the expressiveness of the
-D language.
+Comparative testing and performance evaluation across multiple benchmarks, including basic threading, multiple producer-multiple consumer (MPMC) patterns, and synchronization primitives, were conducted to evaluate the trade-offs of removing D runtime dependencies. The results demonstrate that the betterC implementation achieves comparable runtime performance to D’s native threading while producing binaries that are 30–40x smaller. This lightweight threading library extends D’s applicability to performance-critical and resource-constrained environments while preserving the expressiveness of the D language.
 
 ## Overview
 
