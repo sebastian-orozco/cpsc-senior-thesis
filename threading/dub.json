@@ -1,6 +1,69 @@
 {
     "name": "threading",
     "targetType": "executable",
-    "dflags": ["-betterC"],
-    "lflags": ["-lpthread"]
+    "lflags": ["-lpthread"],
+    
+    "configurations": [
+        {
+            "name": "betterC",
+            "dflags": ["-betterC"],
+            "sourceFiles": ["source/betterC_threadlib.d", "source/betterC_threading.d"],
+            "mainSourceFile": "source/betterC_threading.d",
+            "excludedSourceFiles": ["source/mutex.d", "source/native_ping_pong.d", "source/temp.d", "source/native_threading.d", "source/native_mpmc.d", "source/spawn_threading.d"]
+        },
+        {
+            "name": "betterC_mpmc",
+            "dflags": ["-betterC"],
+            "sourceFiles": ["source/betterC_threadlib.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_mpmc.d"],
+            "mainSourceFile": "source/betterC_mpmc.d",
+            "excludedSourceFiles": ["source/mutex.d", "source/native_ping_pong.d", "source/temp.d", "source/native_threading.d", "source/native_mpmc.d", "source/spawn_threading.d"]
+        },
+        {
+            "name": "betterC_ping_pong",
+            "dflags": ["-betterC"],
+            "sourceFiles": ["source/betterC_threadlib.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_concurrency.d", "source/betterC_ping_pong.d"],
+            "mainSourceFile": "source/betterC_ping_pong.d",
+            "excludedSourceFiles": ["source/native_ping_pong.d", "source/temp.d", "source/native_threading.d", "source/native_mpmc.d", "source/spawn_threading.d"]
+        },
+        {
+            "name": "native",
+            "sourceFiles": ["source/native_threading.d"],
+            "mainSourceFile": "source/native_threading.d",
+            "excludedSourceFiles": ["source/native_ping_pong.d", "source/native_mpmc.d", "source/spawn_threading.d", "source/betterC_threadlib.d", "source/betterC_threading.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_concurrency.d", "source/betterC_mpmc.d", "source/betterC_ping_pong.d", "source/betterC_mutex_demo.d", "source/mutex.d", "source/temp.d"]
+        },
+        {
+            "name": "native_spawn",
+            "sourceFiles": ["source/spawn_threading.d"],
+            "mainSourceFile": "source/spawn_threading.d",
+            "excludedSourceFiles": ["source/native_threading.d", "source/native_ping_pong.d", "source/native_mpmc.d", "source/betterC_threadlib.d", "source/betterC_threading.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_concurrency.d", "source/betterC_mpmc.d", "source/betterC_ping_pong.d", "source/betterC_mutex_demo.d", "source/mutex.d", "source/temp.d"]
+        },
+        {
+            "name": "native_mpmc",
+            "sourceFiles": ["source/native_mpmc.d"],
+            "mainSourceFile": "source/native_mpmc.d",
+            "excludedSourceFiles": ["source/native_threading.d", "source/native_ping_pong.d", "source/spawn_threading.d", "source/betterC_threadlib.d", "source/betterC_threading.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_concurrency.d", "source/betterC_mpmc.d", "source/betterC_ping_pong.d", "source/betterC_mutex_demo.d", "source/mutex.d", "source/temp.d"]
+        },
+        {
+            "name": "betterC_mutex",
+            "dflags": ["-betterC"],
+            "sourceFiles": ["source/betterC_threadlib.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_mutex_demo.d"],
+            "mainSourceFile": "source/betterC_mutex_demo.d",
+            "excludedSourceFiles": ["source/native_ping_pong.d", "source/temp.d", "source/native_threading.d", "source/native_mpmc.d", "source/spawn_threading.d"]
+        },
+        {
+            "name": "empty_native",
+            "sourceFiles": ["source/empty_native.d"],
+            "mainSourceFile": "source/empty_native.d",
+            "lflags": [],
+            "excludedSourceFiles": ["source/native_ping_pong.d", "source/native_mpmc.d", "source/spawn_threading.d", "source/betterC_threadlib.d", "source/betterC_threading.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_concurrency.d", "source/betterC_mpmc.d", "source/betterC_ping_pong.d", "source/betterC_mutex_demo.d", "source/mutex.d", "source/temp.d", "source/native_threading.d", "source/native_mpmc.d", "source/empty_program.d", "source/empty_betterC.d"]
+        },
+        {
+            "name": "empty_betterC",
+            "dflags": ["-betterC"],
+            "sourceFiles": ["source/empty_betterC.d"],
+            "mainSourceFile": "source/empty_betterC.d",
+            "lflags": [],
+            "excludedSourceFiles": ["source/native_ping_pong.d", "source/temp.d", "source/native_threading.d", "source/native_mpmc.d", "source/spawn_threading.d", "source/betterC_threadlib.d", "source/betterC_threading.d", "source/betterC_mutex.d", "source/betterC_condition.d", "source/betterC_concurrency.d", "source/betterC_mpmc.d", "source/betterC_ping_pong.d", "source/betterC_mutex_demo.d", "source/empty_program.d", "source/empty_native.d"]
+        }
+    ]
 }
